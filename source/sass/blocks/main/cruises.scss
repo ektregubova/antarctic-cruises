@@ -1,0 +1,146 @@
+.cruises {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 95px;
+  padding-bottom: 120px;
+  padding-left: 15px;
+  padding-right: 15px;
+
+  @include vp-1023 {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+
+  @include vp-767 {
+    padding: 65px 0;
+  }
+}
+
+.cruises h2 {
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 42px;
+  margin-bottom: 60px;
+
+  @include vp-1023 {
+    font-size: 26px;
+    line-height: 39px;
+  }
+
+  @include vp-767 {
+    font-size: 24px;
+    line-height: 36px;
+    margin-bottom: 40px;
+  }
+}
+
+.cruises__list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  color: $color-light;
+
+  @include vp-1023 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include vp-767 {
+    grid-template-columns: 1fr;
+  }
+}
+
+.cruises__item {
+  position: relative;
+  cursor: pointer;
+  min-height: 386px;
+
+  @include hover {
+    .cruises__content {
+      opacity: 1;
+    }
+
+    .cruises__img-wrapper {
+      opacity: 0;
+    }
+  }
+}
+
+.cruises__img-wrapper {
+  position: relative;
+}
+
+.cruises__item p {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 27px;
+  margin: 0;
+}
+
+.cruises__img-wrapper p {
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+
+  @include vp-1023 {
+    bottom: 35px;
+    left: 35px;
+  }
+}
+
+.cruises__img {
+  min-height: 386px;
+  object-fit: cover;
+}
+
+.cruises__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  width: 100%;
+  min-height: 386px;
+  background-color: $color-dark;
+  padding: 35px 25px;
+
+  @include vp-1023 {
+    padding: 35px;
+  }
+}
+
+//.cruises__content p {
+//  margin-bottom: 18px;
+//}
+
+.cruises__content dl {
+  margin: 0;
+  font-size: 14px;
+  line-height: 20px;
+  //margin-bottom: 20px;
+}
+
+.cruises__content dt {
+  font-weight: 500;
+  //margin-bottom: 5px;
+}
+
+.cruises__content dd {
+  margin: 0;
+  font-weight: 400;
+  color: $color-light-opacity;
+  //margin-bottom: 8px;
+}
+
+.cruises__link {
+  width: 100%;
+  height: 40px;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 21px;
+}

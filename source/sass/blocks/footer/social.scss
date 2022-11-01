@@ -1,0 +1,31 @@
+.social {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin-left: auto;
+  max-width: 160px;
+
+  @include vp-767 {
+    margin-left: 0;
+  }
+}
+
+.social__item:not(:last-child) {
+  margin-right: 27px;
+
+  @include vp-1023 {
+    margin-right: 22px;
+  }
+}
+
+//.social__link {}
+
+.social__icon {
+  @include vp-1023 {
+    width: 16px;
+    height: 16px;
+  }
+}
