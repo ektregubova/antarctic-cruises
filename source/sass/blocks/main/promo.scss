@@ -6,7 +6,8 @@
   padding-bottom: 145px;
 
   @include vp-1023 {
-    padding: 100px 0;
+    padding-top: 100px;
+    padding-bottom: 100px;
   }
 
   @include vp-767 {

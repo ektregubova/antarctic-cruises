@@ -8,13 +8,15 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 30px;
-    padding: 100px 0;
+    padding-top: 100px;
+    padding-bottom: 100px;
   }
 
   @include vp-767 {
     display: flex;
     flex-direction: column-reverse;
-    padding: 65px 0;
+    padding-top: 65px;
+    padding-bottom: 65px;
   }
 }
 

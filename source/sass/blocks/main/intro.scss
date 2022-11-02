@@ -1,0 +1,62 @@
+.intro {
+  min-height: 650px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: $color-light;
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  background-image: url("../img/background-desktop.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  @include vp-1023 {
+    min-height: 638px;
+    background-image: url("../img/background-tablet.png");
+  }
+
+  @include vp-767 {
+    min-height: 500px;
+    background-image: url("../img/background-mobile.png");
+  }
+}
+
+.intro h1 {
+  margin: 0;
+  font-size: 54px;
+  line-height: 66px;
+  margin-bottom: 30px;
+
+  @include vp-1023 {
+    font-size: 50px;
+    line-height: 61px;
+    margin-bottom: 29px;
+  }
+
+  @include vp-767 {
+    font-size: 36px;
+    line-height: 45px;
+    margin-bottom: 25px;
+  }
+}
+
+.intro p {
+  font-size: 20px;
+  margin: 0;
+
+  @include vp-1023 {
+    font-size: 18px;
+    line-height: 22px;
+  }
+
+  @include vp-767 {
+    font-size: 16px;
+  }
+}
+
+[data-intro].closed h1,
+[data-intro].closed p {
+  @include vp-767 {
+    display: none;
+  }
+}
+
