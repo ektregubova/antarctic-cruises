@@ -2,6 +2,9 @@ import {iosVhFix} from './utils/ios-vh-fix';
 import {initModals} from './modules/modals/init-modals';
 import {addMap} from './modules/map';
 import {clickOnToggle} from './modules/menu';
+import {onLinkMove} from './modules/anchor';
+import {validateForm} from './modules/validation';
+
 
 // ---------------------------------
 
@@ -16,6 +19,8 @@ window.addEventListener('DOMContentLoaded', () => {
   // ---------------------------------
   addMap();
   clickOnToggle();
+  onLinkMove();
+  validateForm();
   // все скрипты должны быть в обработчике 'DOMContentLoaded', но не все в 'load'
   // в load следует добавить скрипты, не участвующие в работе первого экрана
   window.addEventListener('load', () => {

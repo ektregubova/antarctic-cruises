@@ -58,7 +58,7 @@
   cursor: pointer;
   min-height: 386px;
 
-  @include hover {
+  @include hover-focus {
     .cruises__content {
       opacity: 1;
     }
@@ -71,6 +71,7 @@
 
 .cruises__img-wrapper {
   position: relative;
+  transition: opacity $trans-default;
 }
 
 .cruises__item p {
@@ -108,15 +109,12 @@
   min-height: 386px;
   background-color: $color-dark;
   padding: 35px 25px;
+  transition: opacity $trans-default;
 
   @include vp-1023 {
     padding: 35px;
   }
 }
-
-//.cruises__content p {
-//  margin-bottom: 18px;
-//}
 
 .cruises__content dl {
   margin: 0;
@@ -139,8 +137,18 @@
 
 .cruises__link {
   width: 100%;
-  height: 40px;
+  min-height: 40px;
   font-weight: 600;
   font-size: 14px;
   line-height: 21px;
+
+
+  @include hover-focus {
+    outline: 2px solid $color-light;
+    outline-offset: 2px;
+  }
+
+  @include active {
+    text-decoration: underline $color-dark;
+  }
 }

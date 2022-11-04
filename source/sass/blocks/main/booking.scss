@@ -1,16 +1,29 @@
 .booking {
   min-height: 555px;
 
-  background-image: url("../img/booking-background.png");
+  background-image: url("../img/background/booking-background.png");
   background-repeat: no-repeat;
   background-size: cover;
+  background-color: #b6d9fa;
 
   @include vp-1023 {
-    background-image: url("../img/booking-tablet.png");
+    background-image: url("../img/background/booking-tablet.png");
   }
 
   @include vp-767 {
-    background-image: url("../img/booking-mobile.png");
+    background-image: url("../img/background/booking-mobile.png");
+  }
+
+  @include retina {
+    background-image: url("../img/background/booking-background@2x.png");
+
+    @include vp-1023 {
+      background-image: url("../img/background/booking-tablet@2x.png");
+    }
+
+    @include vp-767 {
+      background-image: url("../img/background/booking-mobile@2x.png");
+    }
   }
 }
 
@@ -65,8 +78,11 @@
 
 .booking__content {
   margin-right: 20px;
+  //change
+  max-width: 50%;
 
   @include vp-1023 {
+    max-width: 100%;
     margin-right: 0;
     margin-bottom: 60px;
   }
@@ -83,7 +99,8 @@
   min-height: 455px;
   max-width: 403px;
   padding: 50px;
-  background: $color-dark;
+  background-color: $color-dark;
+  color: $color-light;
   box-shadow: 0 4px 45px rgba(1, 28, 64, 0.15);
 
   @include vp-767 {
@@ -93,7 +110,6 @@
 
 .booking__form p {
   font-weight: 500;
-  color: $color-light;
   margin-bottom: 35px;
 
   @include vp-767 {
@@ -115,15 +131,39 @@
     line-height: 21px;
     color: rgba($color: $color-dark, $alpha: 0.7);
   }
+
+  @include hover {
+    outline: 2px solid $color-light;
+    outline-offset: 1px;
+  }
+
+  @include focus {
+    outline: 2px solid $color-light;
+    outline-offset: 2px;
+  }
 }
 
 .booking__form input[type="checkbox"] {
   width: 303px;
-  bottom: 90px;
+  bottom: 120px;
   margin-bottom: 0;
 
   @include vp-767 {
     width: 230px;
+  }
+
+  @include hover {
+    + label::before {
+      outline: 2px solid $color-light;
+      outline-offset: 1px;
+    }
+  }
+
+  @include focus {
+    +label::before {
+      outline: 2px solid $color-light;
+      outline-offset: 2px;
+    }
   }
 }
 
@@ -152,4 +192,15 @@
   background-image: url("../img/svg/checked.svg");
   background-repeat: no-repeat;
   background-position: 4px 6px;
+}
+
+.booking__button {
+  @include hover-focus {
+    outline: 2px solid $color-light;
+    outline-offset: 2px;
+  }
+
+  @include active {
+    text-decoration: underline $color-dark;
+  }
 }

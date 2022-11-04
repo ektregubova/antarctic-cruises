@@ -68,6 +68,7 @@
   color: $color-dark;
   position: relative;
   padding-left: 28px;
+  width: fit-content;
 
   &::before {
     content: "";
@@ -77,6 +78,13 @@
     background-image: url("../img/svg/phone-icon.svg");
     left: 0;
   }
-}
 
-//.contacts__phone {}
+  @include hover-focus {
+    text-decoration: underline $color-dark;
+    outline: none;
+  }
+
+  @include active {
+    outline: 2px solid $color-dark;
+  }
+}

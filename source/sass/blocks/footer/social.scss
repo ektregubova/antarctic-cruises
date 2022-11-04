@@ -15,13 +15,27 @@
 
 .social__item:not(:last-child) {
   margin-right: 27px;
+  margin-bottom: 5px;
 
   @include vp-1023 {
     margin-right: 22px;
   }
 }
 
-//.social__link {}
+.social__link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @include hover-focus {
+    outline: 1px solid $color-light;
+    outline-offset: 2px;
+  }
+
+  @include active {
+    outline: 2px solid $color-light;
+  }
+}
 
 .social__icon {
   @include vp-1023 {

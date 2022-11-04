@@ -73,6 +73,7 @@
 .footer__link {
   font-weight: 500;
   line-height: 20px;
+  width: fit-content;
 
   @include vp-1023 {
     font-size: 12px;
@@ -83,5 +84,13 @@
     font-size: 12px;
     line-height: 15px;
   }
-}
 
+  @include hover-focus {
+    text-decoration: underline $color-light;
+    outline: none;
+  }
+
+  @include active {
+    outline: 1px solid $color-light;
+  }
+}
