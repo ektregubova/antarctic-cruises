@@ -449,7 +449,7 @@ const swiper = () => {
             el.addEventListener(event, handleEvent, capture);
           }
         } else {
-          // Live events
+
           for (j = 0; j < events.length; j += 1) {
             const event = events[j];
             if (!el.dom7LiveListeners) el.dom7LiveListeners = {};
@@ -627,10 +627,10 @@ const swiper = () => {
 
       if (arguments.length === 1) {
         if (typeof props === 'string') {
-          // .css('width')
+
           if (this[0]) return window.getComputedStyle(this[0], null).getPropertyValue(props);
         } else {
-          // .css({ width: '100px' })
+
           for (i = 0; i < this.length; i += 1) {
             for (const prop in props) {
               this[i].style[prop] = props[prop];
@@ -642,7 +642,7 @@ const swiper = () => {
       }
 
       if (arguments.length === 2 && typeof props === 'string') {
-        // .css('width', '100px')
+
         for (i = 0; i < this.length; i += 1) {
           this[i].style[props] = value;
         }
@@ -892,7 +892,7 @@ const swiper = () => {
     }
 
     function parent(selector) {
-      const parents = [];  
+      const parents = [];
 
       for (let i = 0; i < this.length; i += 1) {
         if (this[i].parentNode !== null) {
@@ -1030,13 +1030,13 @@ const swiper = () => {
         try {
           object[key] = null;
         } catch (e) {
-          // no getter for object
+
         }
 
         try {
           delete object[key];
         } catch (e) {
-          // something got wrong
+
         }
       });
     }
@@ -1083,8 +1083,7 @@ const swiper = () => {
             .split(', ')
             .map((a) => a.replace(',', '.'))
             .join(', ');
-        } // Some old versions of Webkit choke when 'none' is passed; pass
-        // empty string instead in this case
+        }
 
         transformMatrix = new window.WebKitCSSMatrix(curTransform === 'none' ? '' : curTransform);
       } else {
@@ -1099,16 +1098,16 @@ const swiper = () => {
       }
 
       if (axis === 'x') {
-        // Latest Chrome and webkits Fix
-        if (window.WebKitCSSMatrix) curTransform = transformMatrix.m41; // Crazy IE10 Matrix
-        else if (matrix.length === 16) curTransform = parseFloat(matrix[12]); // Normal Browsers
+
+        if (window.WebKitCSSMatrix) curTransform = transformMatrix.m41;
+        else if (matrix.length === 16) curTransform = parseFloat(matrix[12]);
         else curTransform = parseFloat(matrix[4]);
       }
 
       if (axis === 'y') {
-        // Latest Chrome and webkits Fix
-        if (window.WebKitCSSMatrix) curTransform = transformMatrix.m42; // Crazy IE10 Matrix
-        else if (matrix.length === 16) curTransform = parseFloat(matrix[13]); // Normal Browsers
+
+        if (window.WebKitCSSMatrix) curTransform = transformMatrix.m42;
+        else if (matrix.length === 16) curTransform = parseFloat(matrix[13]);
         else curTransform = parseFloat(matrix[5]);
       }
 
@@ -1242,14 +1241,14 @@ const swiper = () => {
 
           try {
             const opts = Object.defineProperty({}, 'passive', {
-              //  nt-disable-next-line
+
               get() {
                 supportsPassive = true;
               },
             });
             window.addEventListener('testPassiveListener', null, opts);
           } catch (e) {
-            // No support
+
           }
 
           return supportsPassive;
@@ -1287,7 +1286,7 @@ const swiper = () => {
       const ipod = ua.match(/(iPod)(.*OS\s([\d_]+))?/);
       const iphone = !ipad && ua.match(/(iPhone\sOS|iOS)\s([\d_]+)/);
       const windows = platform === 'Win32';
-      let macos = platform === 'MacIntel'; // iPadOs 13 fix
+      let macos = platform === 'MacIntel';
 
       const iPadScreens = [
         '1024x1366',
@@ -1308,7 +1307,7 @@ const swiper = () => {
         ipad = ua.match(/(Version)\/([\d.]+)/);
         if (!ipad) ipad = [0, 1, '13_0_0'];
         macos = false;
-      } // Android
+      }
 
       if (android && !windows) {
         device.os = 'android';
@@ -1318,7 +1317,7 @@ const swiper = () => {
       if (ipad || iphone || ipod) {
         device.os = 'ios';
         device.ios = true;
-      } // Export object
+      }
 
       return device;
     }
@@ -1419,9 +1418,7 @@ const swiper = () => {
       const attach = (target, options = {}) => {
         const ObserverFunc = window.MutationObserver || window.WebkitMutationObserver;
         const observer = new ObserverFunc((mutations) => {
-          // The observerUpdate event should only be triggered
-          // once despite the number of mutations.  Additional
-          // triggers are redundant and are very costly
+
           if (mutations.length === 1) {
             emit('observerUpdate', mutations[0]);
             return;
@@ -1454,11 +1451,11 @@ const swiper = () => {
           for (let i = 0; i < containerParents.length; i += 1) {
             attach(containerParents[i]);
           }
-        } // Observe container
+        }
 
         attach(swiper.$el[0], {
           childList: swiper.params.observ deChildren,
-        }); // Observe wrapper
+        });
 
         attach(swiper.$wrapperEl[0], {
           attributes: false,
@@ -1481,7 +1478,6 @@ const swiper = () => {
       on('destroy', destroy);
     }
 
-    /*  nt-disable no-underscore-dangle */
     var eventsEmitter = {
       on(events, handler, priority) {
         const self = this;
@@ -1612,7 +1608,7 @@ const swiper = () => {
 
       if ((width === 0 && swiper.isHorizontal()) || (height === 0 && swiper.isVertical())) {
         return;
-      } // Subtract paddings
+      }
 
       width = width - parseInt($el.css('padding-left') || 0, 10) - parseInt($el.css('padding-right') || 0, 10);
       height = height - parseInt($el.css('padding-top') || 0, 10) - parseInt($el.css('padding-bottom') || 0, 10);
@@ -1631,8 +1627,7 @@ const swiper = () => {
       function getDirectionLabel(property) {
         if (swiper.isHorizontal()) {
         return property;
-      } // prettier-ignore
-
+      }
         return {
           width: 'height',
           'margin-top': 'margin-left',
@@ -1685,7 +1680,7 @@ const swiper = () => {
         spaceBetween = (parseFloat(spaceBetween.replace('%', '')) / 100) * swiperSize;
       }
 
-      swiper.virtualSize = -spaceBetween; // reset margins
+      swiper.virtualSize = -spaceBetween;
 
       if (rtl)
         slides.css({
@@ -1698,7 +1693,7 @@ const swiper = () => {
           marginRight: '',
           marginBottom: '',
           marginTop: '',
-        }); // reset cssMode offsets
+        });
 
       if (params.centeredSlides && params.cssMode) {
         setCSSProperty(swiper.wrapperEl, '--swiper-centered-offset-before', '');
@@ -1709,7 +1704,7 @@ const swiper = () => {
 
       if (gridEnabled) {
         swiper.grid.initSlides(slidesLength);
-      } // Calc slides
+      }
 
       let slideSize;
       const shouldResetSlideSize =
@@ -1749,7 +1744,7 @@ const swiper = () => {
           if (params.roundLengths) {
             slideSize = swiper.isHorizontal() ? slide.outerWidth(true) : slide.outerHeight(true);
           } else {
-            //  nt-disable-next-line
+
             const width = getDirectionPropertyValue(slideStyles, 'width');
             const paddingLeft = getDirectionPropertyValue(slideStyles, 'padding-left');
             const paddingRight = getDirectionPropertyValue(slideStyles, 'padding-right');
@@ -1826,7 +1821,7 @@ const swiper = () => {
 
       if (gridEnabled) {
         swiper.grid.updateWrapperSize(slideSize, snapGrid, getDirectionLabel);
-      } // Remove last grid elements depending on width
+      }
 
       if (!params.centeredSlides) {
         const newSlidesGrid = [];
@@ -1955,7 +1950,7 @@ const swiper = () => {
         }
 
         return swiper.slides.eq(index)[0];
-      }; // Find slides currently in view
+      };
 
       if (swiper.params.slidesPerView !== 'auto' && swiper.params.slidesPerView > 1) {
         if (swiper.params.centeredSlides) {
@@ -1971,14 +1966,14 @@ const swiper = () => {
         }
       } else {
         activ des.push(getSlideByIndex(swiper.activeIndex));
-      } // Find new height from highest slide in view
+      }
 
       for (i = 0; i < activ des.length; i += 1) {
         if (typeof activ des[i] !== 'undefined') {
           const height = activ des[i].offsetHeight;
           newHeight = height > newHeight ? height : newHeight;
         }
-      } // Update Height
+      }
 
       if (newHeight || newHeight === 0) swiper.$wrapperEl.css('height', `${newHeight}px`);
     }
@@ -1999,7 +1994,7 @@ const swiper = () => {
       if (slides.length === 0) return;
       if (typeof slides[0].swiperSlideOffset === 'undefined') swiper.updat desOffset();
       let offsetCenter = -translate;
-      if (rtl) offsetCenter = translate; // Visible Slides
+      if (rtl) offsetCenter = translate;
 
       slides.removeClass(params.slideVisibleClass);
       swiper.visibl desIndexes = [];
@@ -2043,7 +2038,7 @@ const swiper = () => {
       const swiper = this;
 
       if (typeof translate === 'undefined') {
-        const multiplier = swiper.rtlTranslate ? -1 : 1; //  nt-disable-next-line
+        const multiplier = swiper.rtlTranslate ? -1 : 1;
 
         translate = (swiper && swiper.translate && swiper.translate * multiplier) || 0;
       }
@@ -2100,12 +2095,12 @@ const swiper = () => {
         activ de = swiper.$wrapperEl.find(`.${params.slideClass}[data-swiper-slide-index="${activeIndex}"]`);
       } else {
         activ de = slides.eq(activeIndex);
-      } // Active classes
+      }
 
       activ de.addClass(params.slideActiveClass);
 
       if (params.loop) {
-        // Duplicate to all looped slides
+
         if (activ de.hasClass(params.slideDuplicateClass)) {
           $wrapperEl
             .children(
@@ -2117,14 +2112,14 @@ const swiper = () => {
             .children(`.${params.slideClass}.${params.slideDuplicateClass}[data-swiper-slide-index="${realIndex}"]`)
             .addClass(params.slideDuplicateActiveClass);
         }
-      } // Next Slide
+      }
 
       let nextSlide = activ de.nextAll(`.${params.slideClass}`).eq(0).addClass(params.slideNextClass);
 
       if (params.loop && nextSlide.length === 0) {
         nextSlide = slides.eq(0);
         nextSlide.addClass(params.slideNextClass);
-      } // Prev Slide
+      }
 
       let prevSlide = activ de.prevAll(`.${params.slideClass}`).eq(0).addClass(params.slidePrevClass);
 
@@ -2134,7 +2129,7 @@ const swiper = () => {
       }
 
       if (params.loop) {
-        // Duplicate to all looped slides
+
         if (nextSlide.hasClass(params.slideDuplicateClass)) {
           $wrapperEl
             .children(
@@ -2200,7 +2195,7 @@ const swiper = () => {
           } else if (translate >= slidesGrid[i]) {
             activeIndex = i;
           }
-        } // Normalize slideIndex
+        }
 
         if (params.normaliz deIndex) {
           if (activeIndex < 0 || typeof activeIndex === 'undefined') activeIndex = 0;
@@ -2223,7 +2218,7 @@ const swiper = () => {
         }
 
         return;
-      } // Get real index
+      }
 
       const realIndex = parseInt(swiper.slides.eq(activeIndex).attr('data-swiper-slide-index') || activeIndex, 10);
       Object.assign(swiper, {
@@ -2338,7 +2333,7 @@ const swiper = () => {
       }
 
       swiper.previousTranslate = swiper.translate;
-      swiper.translate = swiper.isHorizontal() ? x : y; // Check if we need to update progress
+      swiper.translate = swiper.isHorizontal() ? x : y;
 
       let newProgress;
       const translatesDiff = swiper.maxTranslate() - swiper.minTranslate();
@@ -2383,7 +2378,7 @@ const swiper = () => {
       let newTranslate;
       if (translateBounds && translate > minTranslate) newTranslate = minTranslate;
       else if (translateBounds && translate < maxTranslate) newTranslate = maxTranslate;
-      else newTranslate = translate; // Update progress
+      else newTranslate = translate;
 
       swiper.updateProgress(newTranslate);
 
@@ -2560,8 +2555,7 @@ const swiper = () => {
 
         if (!isValidNumber) {
           throw new Error(`The passed-in 'index' (string) couldn't be converted to 'number'. [${index}] given.`);
-        } // Knowing that the converted `index` is a valid number,
-        // we can update the original argument's value.
+        }
 
         index = indexAsNumber;
       }
@@ -2583,9 +2577,9 @@ const swiper = () => {
         swiper.emit('befor deChangeStart');
       }
 
-      const translate = -snapGrid[snapIndex]; // Update progress
+      const translate = -snapGrid[snapIndex];
 
-      swiper.updateProgress(translate); // Normalize slideIndex
+      swiper.updateProgress(translate);
 
       if (params.normaliz deIndex) {
         for (let i = 0; i < slidesGrid.length; i += 1) {
@@ -2606,7 +2600,7 @@ const swiper = () => {
             slideIndex = i;
           }
         }
-      } // Directions locks
+      }
 
       if (swiper.initialized && slideIndex !== activeIndex) {
         if (!swiper.allowSlideNext && translate < swiper.translate && translate < swiper.minTranslate()) {
@@ -2621,10 +2615,10 @@ const swiper = () => {
       let direction;
       if (slideIndex > activeIndex) direction = 'next';
       else if (slideIndex < activeIndex) direction = 'prev';
-      else direction = 'reset'; // Update Index
+      else direction = 'reset';
 
       if ((rtl && -translate === swiper.translate) || (!rtl && translate === swiper.translate)) {
-        swiper.updateActiveIndex(slideIndex); // Update Height
+        swiper.updateActiveIndex(slideIndex);
 
         if (params.autoHeight) {
           swiper.updateAutoHeight();
@@ -2740,7 +2734,7 @@ const swiper = () => {
 
       if (params.loop) {
         if (animating && params.loopPreventsSlide) return false;
-        swiper.loopFix(); //  nt-disable-next-line
+        swiper.loopFix();
 
         swiper._clientLeft = swiper.$wrapperEl[0].clientLeft;
       }
@@ -2760,7 +2754,7 @@ const swiper = () => {
 
       if (params.loop) {
         if (animating && params.loopPreventsSlide) return false;
-        swiper.loopFix(); //  nt-disable-next-line
+        swiper.loopFix();
 
         swiper._clientLeft = swiper.$wrapperEl[0].clientLeft;
       }
@@ -2780,7 +2774,7 @@ const swiper = () => {
         let prevSnapIndex;
         snapGrid.forEach((snap, snapIndex) => {
           if (normalizedTranslate >= snap) {
-            // prevSnap = snap;
+
             prevSnapIndex = snapIndex;
           }
         });
@@ -2809,13 +2803,13 @@ const swiper = () => {
       return swiper.slideTo(prevIndex, speed, runCallbacks, internal);
     }
 
-    /*  nt no-unused-vars: "off" */
+
     function slideReset(speed = this.params.speed, runCallbacks = true, internal) {
       const swiper = this;
       return swiper.slideTo(swiper.activeIndex, speed, runCallbacks, internal);
     }
 
-    /*  nt no-unused-vars: "off" */
+
     function slideToClosest(speed = this.params.speed, runCallbacks = true, internal, threshold = 0.5) {
       const swiper = this;
       let index = swiper.activeIndex;
@@ -2824,8 +2818,7 @@ const swiper = () => {
       const translate = swiper.rtlTranslate ? swiper.translate : -swiper.translate;
 
       if (translate >= swiper.snapGrid[snapIndex]) {
-        // The current translate is on or after the current snap index, so the choice
-        // is between the current index and the one after it.
+
         const currentSnap = swiper.snapGrid[snapIndex];
         const nextSnap = swiper.snapGrid[snapIndex + 1];
 
@@ -2833,8 +2826,7 @@ const swiper = () => {
           index += swiper.params.slidesPerGroup;
         }
       } else {
-        // The current translate is before the current snap index, so the choice
-        // is between the current index and the one before it.
+
         const prevSnap = swiper.snapGrid[snapIndex - 1];
         const currentSnap = swiper.snapGrid[snapIndex];
 
@@ -2909,7 +2901,7 @@ const swiper = () => {
     function loopCreate() {
       const swiper = this;
       const document = getDocument();
-      const {params, $wrapperEl} = swiper; // Remove duplicated slides
+      const {params, $wrapperEl} = swiper;
 
       const $selector = $wrapperEl.children().length > 0 ? $($wrapperEl.children()[0].parentNode) : $wrapperEl;
       $selector.children(`.${params.slideClass}.${params.slideDuplicateClass}`).remove();
@@ -2971,7 +2963,7 @@ const swiper = () => {
       swiper.allowSlidePrev = true;
       swiper.allowSlideNext = true;
       const snapTranslate = -snapGrid[activeIndex];
-      const diff = snapTranslate - swiper.getTranslate(); // Fix For Negative Oversliding
+      const diff = snapTranslate - swiper.getTranslate();
 
       if (activeIndex < loopedSlides) {
         newIndex = slides.length - loopedSlides * 3 + activeIndex;
@@ -2982,7 +2974,7 @@ const swiper = () => {
           swiper.setTranslate((rtl ? -swiper.translate : swiper.translate) - diff);
         }
       } else if (activeIndex >= slides.length - loopedSlides) {
-        // Fix For Positive Oversliding
+
         newIndex = -slides.length + activeIndex + loopedSlides;
         newIndex += loopedSlides;
         const slideChanged = swiper.slideTo(newIndex, 0, false, true);
@@ -3081,7 +3073,7 @@ const swiper = () => {
       data.isTouchEvent = e.type === 'touchstart';
       if (!data.isTouchEvent && 'which' in e && e.which === 3) return;
       if (!data.isTouchEvent && 'button' in e && e.button > 0) return;
-      if (data.isTouched && data.isMoved) return; // change target el for shadow root component
+      if (data.isTouched && data.isMoved) return; 
 
       const swipingClassHasValue = !!params.noSwipingClass && params.noSwipingClass !== '';
 

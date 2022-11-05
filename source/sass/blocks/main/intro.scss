@@ -8,11 +8,13 @@
   background-image: url("../img/background/background-desktop.png");
   background-repeat: no-repeat;
   background-size: cover;
-  background-color: #045b9f;
+  background-color: #266aab;
+  filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
 
   @include vp-1023 {
     min-height: 638px;
     background-image: url("../img/background/background-tablet.png");
+    filter: none;
   }
 
   @include vp-767 {
@@ -33,22 +35,39 @@
   }
 }
 
+.intro__container {
+  width: 100%;
+  max-width: 1260px;
+  margin: 0 auto;
+  padding: 0 145px;
+
+  @include vp-1023 {
+    padding: 0 45px;
+  }
+
+  @include vp-767 {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
 .intro h1 {
   margin: 0;
   font-size: 54px;
-  line-height: 66px;
-  margin-bottom: 30px;
+  line-height: 40px;
+  margin-bottom: 27px;
 
   @include vp-1023 {
     font-size: 50px;
-    line-height: 61px;
-    margin-bottom: 29px;
+    line-height: 35px;
+    margin-bottom: 26px;
   }
 
   @include vp-767 {
     font-size: 36px;
     line-height: 45px;
-    margin-bottom: 25px;
+    margin-bottom: 12px;
+    margin-top: -7px;
   }
 }
 
@@ -66,9 +85,17 @@
   }
 }
 
-[data-intro].closed h1,
-[data-intro].closed p {
+.intro br {
+  display: none;
+
   @include vp-767 {
-    display: none;
+    display: block;
+  }
+}
+
+[data-intro].is-closed h1,
+[data-intro].is-closed p {
+  @include vp-767 {
+    opacity: 0;
   }
 }

@@ -27,44 +27,74 @@
   }
 }
 
-.booking .container {
+.booking__container {
+  width: 100%;
+  max-width: 1260px;
+  margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 50px 163px;
+  padding: 50px 110px;
 
   @include vp-1023 {
     flex-direction: column;
     padding-top: 100px;
     padding-bottom: 100px;
+    padding-left: 45px;
+    padding-right: 45px;
   }
 
   @include vp-767 {
-    padding: 65px 15px;
+    padding-top: 60px;
+    padding-bottom: 65px;
+    padding-left: 15px;
+    padding-right: 15px;
   }
 }
 
-.booking h2 {
+.booking__content {
+  display: flex;
+  flex-direction: column;
+  margin-right: 20px;
+  max-width: 500px;
+
+  @include vp-1023 {
+    align-items: center;
+    max-width: 100%;
+    margin-right: 0;
+    margin-bottom: 53px;
+  }
+
+  @include vp-767 {
+    margin-bottom: 34px;
+  }
+}
+
+.booking__content h2 {
   font-size: 40px;
-  line-height: 60px;
+  line-height: 40px;
   margin: 0;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 
   @include vp-1023 {
     font-size: 34px;
-    line-height: 51px;
-    margin-bottom: 25px;
+    line-height: 25px;
+    margin-bottom: 18px;
   }
 
   @include vp-767 {
+    font-size: 24px;
+    line-height: 29px;
     text-align: center;
+    margin-bottom: 17px;
   }
 }
 
-.booking p {
+.booking__content p {
   margin: 0;
   font-size: 18px;
   line-height: 27px;
+  max-width: 352px;
 
   @include vp-1023 {
     text-align: center;
@@ -76,19 +106,11 @@
   }
 }
 
-.booking__content {
-  margin-right: 20px;
-  //change
-  max-width: 50%;
-
-  @include vp-1023 {
-    max-width: 100%;
-    margin-right: 0;
-    margin-bottom: 60px;
-  }
+.booking__content br {
+  display: none;
 
   @include vp-767 {
-    margin-bottom: 40px;
+    display: block;
   }
 }
 
@@ -98,23 +120,38 @@
   position: relative;
   min-height: 455px;
   max-width: 403px;
-  padding: 50px;
+  padding-top: 44px;
+  padding-bottom: 50px;
+  padding-left: 50px;
+  padding-right: 50px;
   background-color: $color-dark;
   color: $color-light;
   box-shadow: 0 4px 45px rgba(1, 28, 64, 0.15);
 
   @include vp-767 {
-    padding: 40px 30px;
+    padding-top: 34px;
+    padding-bottom: 40px;
+    padding-left: 30px;
+    padding-right: 30px;
   }
 }
 
 .booking__form p {
+  font-size: 18px;
+  line-height: 27px;
+  margin: 0;
   font-weight: 500;
-  margin-bottom: 35px;
+  margin-bottom: 28px;
+
+  @include vp-1023 {
+    margin-bottom: 27px;
+  }
 
   @include vp-767 {
+    text-align: center;
     font-size: 18px;
     line-height: 25px;
+    margin-bottom: 29px;
   }
 }
 
@@ -133,35 +170,36 @@
   }
 
   @include hover {
-    outline: 2px solid $color-light;
+    outline: 1px solid $color-light;
     outline-offset: 1px;
   }
 
   @include focus {
-    outline: 2px solid $color-light;
+    outline: 1px solid $color-light;
     outline-offset: 2px;
   }
 }
 
 .booking__form input[type="checkbox"] {
-  width: 303px;
+  max-width: 303px;
   bottom: 120px;
   margin-bottom: 0;
 
   @include vp-767 {
     width: 230px;
+    bottom: 95px;
   }
 
   @include hover {
     + label::before {
-      outline: 2px solid $color-light;
+      outline: 1px solid $color-light;
       outline-offset: 1px;
     }
   }
 
   @include focus {
     +label::before {
-      outline: 2px solid $color-light;
+      outline: 1px solid $color-light;
       outline-offset: 2px;
     }
   }
@@ -175,7 +213,8 @@
   position: relative;
   cursor: pointer;
   user-select: none;
-  margin-bottom: 30px;
+  margin-bottom: 33px;
+  margin-top: 2px;
 
   &::before {
     content: "";
@@ -186,6 +225,20 @@
     top: -2px;
     background-color: $color-light;
   }
+
+  @include vp-767 {
+    margin-bottom: 25px;
+    margin-top: -1px;
+    padding-left: 28px;
+    width: 180px;
+
+    &::before {
+      width: 20px;
+      height: 20px;
+      left: 0;
+      top: 1px;
+    }
+  }
 }
 
 .booking__form input[type="checkbox"]:checked + label::before {
@@ -195,12 +248,18 @@
 }
 
 .booking__button {
+  min-height: 43px;
+
   @include hover-focus {
-    outline: 2px solid $color-light;
+    outline: 1px solid $color-light;
     outline-offset: 2px;
   }
 
   @include active {
     text-decoration: underline $color-dark;
   }
+}
+
+.booking__form input[is-valid="0"] {
+  border: 2px solid #ff1553;
 }

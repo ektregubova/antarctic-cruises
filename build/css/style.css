@@ -598,13 +598,6 @@ button,
   clip-path: inset(100%);
 }
 
-.container {
-  width: 100%;
-  max-width: 1326px;
-  margin: 0 auto;
-  padding: 0 103px;
-}
-
 .btn {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
@@ -766,6 +759,7 @@ button,
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  z-index: 10;
 }
 
 .header__wrapper {
@@ -779,22 +773,13 @@ button,
   -ms-flex-pack: justify;
   justify-content: space-between;
   width: 100%;
-  max-width: 1326px;
+  max-width: 1260px;
   margin: 0 auto;
-  padding: 0 103px;
+  padding: 0 50px;
 }
 
 .header__icon {
   fill: #f9fbfd;
-}
-
-.header__nav {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  width: 600px;
 }
 
 .header__list {
@@ -806,7 +791,8 @@ button,
   list-style: none;
   margin: 0;
   padding: 0;
-  width: 100%;
+  max-width: 593px;
+  margin-bottom: 7px;
 }
 
 .header__item:not(:last-child) {
@@ -835,7 +821,7 @@ button,
 [data-header].is-closed [data-nav-toggle]::before {
   content: "";
   position: absolute;
-  top: 0;
+  top: 4px;
   right: 15px;
   height: 2px;
   width: 24px;
@@ -889,14 +875,23 @@ button,
   background-image: url("../img/background/background-desktop.png");
   background-repeat: no-repeat;
   background-size: cover;
-  background-color: #045b9f;
+  background-color: #266aab;
+  -webkit-filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
+  filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.intro__container {
+  width: 100%;
+  max-width: 1260px;
+  margin: 0 auto;
+  padding: 0 145px;
 }
 
 .intro h1 {
   margin: 0;
   font-size: 54px;
-  line-height: 66px;
-  margin-bottom: 30px;
+  line-height: 40px;
+  margin-bottom: 27px;
 }
 
 .intro p {
@@ -904,34 +899,43 @@ button,
   margin: 0;
 }
 
+.intro br {
+  display: none;
+}
+
 .promo {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   padding-top: 120px;
   padding-bottom: 145px;
+  width: 100%;
+  max-width: 1260px;
+  margin: 0 auto;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.promo__content {
+  max-width: 512px;
+  margin-right: 88px;
 }
 
 .promo h2 {
   font-weight: 600;
   font-size: 28px;
-  line-height: 42px;
+  line-height: 30px;
   margin: 0;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
 }
 
-.promo__content {
-  margin-right: 88px;
-  max-width: 50%;
-}
-
-.promo__content p {
+.promo p {
   margin: 0;
 }
 
@@ -943,14 +947,17 @@ button,
 }
 
 .advantages {
-  padding: 120px 0;
   background-image: url("../img/background/background-advantages.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-color: #d9e6f5;
 }
 
-.advantages .container {
+.advantages__container {
+  width: 100%;
+  max-width: 1260px;
+  margin: 0 auto;
+  padding: 120px 50px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -966,7 +973,7 @@ button,
 .advantages h2 {
   font-weight: 600;
   font-size: 28px;
-  line-height: 42px;
+  line-height: 20px;
   margin: 0;
   margin-bottom: 60px;
 }
@@ -976,7 +983,7 @@ button,
   display: grid;
   -ms-grid-columns: (1fr)[3];
   grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
+  gap: 40px;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -987,8 +994,12 @@ button,
   background-color: #f9fbfd;
   padding-top: 80px;
   padding-right: 34px;
-  padding-bottom: 40px;
+  padding-bottom: 45px;
   padding-left: 30px;
+}
+
+.advantages__item--all-inclusive {
+  padding-right: 50px;
 }
 
 .advantages__item::before {
@@ -997,18 +1008,20 @@ button,
   top: 30px;
   left: 30px;
   height: 32px;
-  width: 44px;
 }
 
 .advantages__item--liner::before {
+  width: 27px;
   background: url("../img/svg/liner.svg") no-repeat;
 }
 
 .advantages__item--all-inclusive::before {
+  width: 38px;
   background: url("../img/svg/all-inclusive.svg") no-repeat;
 }
 
 .advantages__item--zodiac-boat::before {
+  width: 44px;
   background: url("../img/svg/zodiac-boat.svg") no-repeat;
 }
 
@@ -1017,7 +1030,7 @@ button,
   font-size: 18px;
   line-height: 27px;
   margin: 0;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .advantages__item p {
@@ -1026,7 +1039,14 @@ button,
   margin: 0;
 }
 
+.advantages__item br {
+  display: none;
+}
+
 .cruises {
+  width: 100%;
+  max-width: 1260px;
+  margin: 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1039,14 +1059,15 @@ button,
   flex-direction: column;
   padding-top: 95px;
   padding-bottom: 120px;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 65px;
+  padding-right: 65px;
 }
 
 .cruises h2 {
   font-weight: 600;
   font-size: 28px;
-  line-height: 42px;
+  line-height: 20px;
+  margin: 0;
   margin-bottom: 60px;
 }
 
@@ -1092,7 +1113,7 @@ button,
 
 .cruises__img-wrapper p {
   position: absolute;
-  bottom: 30px;
+  bottom: 22px;
   left: 30px;
 }
 
@@ -1120,7 +1141,10 @@ button,
   width: 100%;
   min-height: 386px;
   background-color: #011c40;
-  padding: 35px 25px;
+  padding-top: 30px;
+  padding-bottom: 34px;
+  padding-left: 25px;
+  padding-right: 25px;
   -webkit-transition: opacity 0.3s ease;
   -o-transition: opacity 0.3s ease;
   transition: opacity 0.3s ease;
@@ -1140,6 +1164,7 @@ button,
   margin: 0;
   font-weight: 400;
   color: #d8d8d9;
+  margin-bottom: 12px;
 }
 
 .cruises__link {
@@ -1168,7 +1193,10 @@ button,
   background-color: #b6d9fa;
 }
 
-.booking .container {
+.booking__container {
+  width: 100%;
+  max-width: 1260px;
+  margin: 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1178,25 +1206,37 @@ button,
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding: 50px 163px;
-}
-
-.booking h2 {
-  font-size: 40px;
-  line-height: 60px;
-  margin: 0;
-  margin-bottom: 30px;
-}
-
-.booking p {
-  margin: 0;
-  font-size: 18px;
-  line-height: 27px;
+  padding: 50px 110px;
 }
 
 .booking__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
   margin-right: 20px;
-  max-width: 50%;
+  max-width: 500px;
+}
+
+.booking__content h2 {
+  font-size: 40px;
+  line-height: 40px;
+  margin: 0;
+  margin-bottom: 20px;
+}
+
+.booking__content p {
+  margin: 0;
+  font-size: 18px;
+  line-height: 27px;
+  max-width: 352px;
+}
+
+.booking__content br {
+  display: none;
 }
 
 .booking__form {
@@ -1210,7 +1250,10 @@ button,
   position: relative;
   min-height: 455px;
   max-width: 403px;
-  padding: 50px;
+  padding-top: 44px;
+  padding-bottom: 50px;
+  padding-left: 50px;
+  padding-right: 50px;
   background-color: #011c40;
   color: #f9fbfd;
   -webkit-box-shadow: 0 4px 45px rgba(1, 28, 64, 0.15);
@@ -1218,8 +1261,11 @@ button,
 }
 
 .booking__form p {
+  font-size: 18px;
+  line-height: 27px;
+  margin: 0;
   font-weight: 500;
-  margin-bottom: 35px;
+  margin-bottom: 28px;
 }
 
 .booking__form input {
@@ -1262,18 +1308,18 @@ button,
 }
 
 .booking__form input.focus-visible:focus {
-  outline: 2px solid #f9fbfd;
+  outline: 1px solid #f9fbfd;
   outline-offset: 2px;
 }
 
 .booking__form input[type=checkbox] {
-  width: 303px;
+  max-width: 303px;
   bottom: 120px;
   margin-bottom: 0;
 }
 
 .booking__form input[type=checkbox].focus-visible:focus + label::before {
-  outline: 2px solid #f9fbfd;
+  outline: 1px solid #f9fbfd;
   outline-offset: 2px;
 }
 
@@ -1288,7 +1334,8 @@ button,
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  margin-bottom: 30px;
+  margin-bottom: 33px;
+  margin-top: 2px;
 }
 
 .booking__form input[type=checkbox] + label::before {
@@ -1307,8 +1354,12 @@ button,
   background-position: 4px 6px;
 }
 
+.booking__button {
+  min-height: 43px;
+}
+
 .booking__button.focus-visible:focus {
-  outline: 2px solid #f9fbfd;
+  outline: 1px solid #f9fbfd;
   outline-offset: 2px;
 }
 
@@ -1317,15 +1368,21 @@ button,
   text-decoration: underline #011c40;
 }
 
+.booking__form input[is-valid="0"] {
+  border: 2px solid #ff1553;
+}
+
 .contacts {
+  width: 100%;
+  max-width: 1260px;
+  margin: 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding-top: 120px;
-  padding-bottom: 120px;
+  padding: 120px 50px;
 }
 
 .contacts__content {
@@ -1336,62 +1393,78 @@ button,
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
   max-width: 500px;
   margin-left: 20px;
+  margin-top: 75px;
 }
 
-.contacts__content h3 {
+.contacts__content p {
   font-weight: 500;
   font-size: 18px;
   line-height: 27px;
   margin: 0;
-  margin-bottom: 40px;
+  margin-bottom: 32px;
 }
 
-.contacts__content p {
+.contacts__list {
   margin: 0;
+  padding: 0;
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.contacts__item {
+  margin-bottom: 20px;
   position: relative;
   padding-left: 28px;
-  margin-bottom: 25px;
 }
 
-.contacts__content p::before {
+.contacts__item::before {
   content: "";
   position: absolute;
-  height: 22px;
   width: 18px;
-  background-image: url("../img/svg/map-icon.svg");
+  top: 0;
   left: 0;
 }
 
-.contacts__content a[href^="tel:"] {
+.contacts__item--address::before {
+  height: 22px;
+  top: 6px;
+  background-image: url("../img/svg/map-icon.svg");
+}
+
+.contacts__item--phone::before {
+  top: 3px;
+  height: 18px;
+  background-image: url("../img/svg/phone-icon.svg");
+}
+
+.contacts__item br {
+  display: none;
+}
+
+.contacts__content a {
   color: #011c40;
-  position: relative;
-  padding-left: 28px;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
 }
 
-.contacts__content a[href^="tel:"]::before {
-  content: "";
-  position: absolute;
-  height: 18px;
-  width: 18px;
-  background-image: url("../img/svg/phone-icon.svg");
-  left: 0;
-}
-
-.contacts__content a[href^="tel:"].focus-visible:focus {
+.contacts__content a.focus-visible:focus {
   -webkit-text-decoration: underline #011c40;
   text-decoration: underline #011c40;
   outline: none;
 }
 
-.contacts__content a[href^="tel:"].focus-visible:active {
+.contacts__content a.focus-visible:active {
   outline: 2px solid #011c40;
 }
 
@@ -1421,7 +1494,10 @@ button,
   background-color: #011c40;
 }
 
-.footer .container {
+.footer__container {
+  width: 100%;
+  max-width: 1260px;
+  margin: 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1431,8 +1507,10 @@ button,
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  padding-left: 50px;
+  padding-right: 50px;
   padding-top: 50px;
-  padding-bottom: 50px;
+  padding-bottom: 44px;
 }
 
 .footer__logo {
@@ -1452,7 +1530,8 @@ button,
   list-style: none;
   margin: 0;
   padding: 0;
-  max-width: 700px;
+  max-width: 593px;
+  margin-bottom: 7px;
 }
 
 .footer__item:not(:last-child) {
@@ -1493,9 +1572,12 @@ button,
   max-width: 160px;
 }
 
+.social__item {
+  margin-bottom: 5px;
+}
+
 .social__item:not(:last-child) {
   margin-right: 27px;
-  margin-bottom: 5px;
 }
 
 .social__link {
@@ -1561,11 +1643,8 @@ button,
 */
 
 @media (max-width: 1023px) {
-  .container {
-    padding: 0 45px;
-  }
-
   .header {
+    top: 27px;
     min-height: 22px;
   }
 
@@ -1590,12 +1669,18 @@ button,
   .intro {
     min-height: 638px;
     background-image: url("../img/background/background-tablet.png");
+    -webkit-filter: none;
+    filter: none;
+  }
+
+  .intro__container {
+    padding: 0 45px;
   }
 
   .intro h1 {
     font-size: 50px;
-    line-height: 61px;
-    margin-bottom: 29px;
+    line-height: 35px;
+    margin-bottom: 26px;
   }
 
   .intro p {
@@ -1604,60 +1689,96 @@ button,
   }
 
   .promo {
-    padding-top: 100px;
-    padding-bottom: 100px;
-  }
-
-  .promo h2 {
-    font-size: 26px;
-    line-height: 36px;
-    margin-bottom: 30px;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    padding-left: 45px;
+    padding-right: 50px;
+    padding-top: 90px;
+    padding-bottom: 94px;
   }
 
   .promo__content {
+    max-width: 324px;
     margin-right: 25px;
   }
 
+  .promo h2 {
+    max-width: 205px;
+    font-size: 26px;
+    line-height: 36px;
+    margin-bottom: 16px;
+  }
+
   .promo__img {
+    margin-top: 10px;
     max-width: 324px;
     height: 174px;
   }
 
-  .advantages {
-    padding: 100px 0;
+  .advantages__container {
+    padding-top: 98px;
+    padding-bottom: 100px;
+    padding-left: 45px;
+    padding-right: 45px;
   }
 
   .advantages h2 {
     font-size: 26px;
-    line-height: 39px;
+  }
+
+  .advantages__list {
+    gap: 30px;
   }
 
   .advantages__item {
-    padding-top: 75px;
+    padding-top: 70px;
     padding-right: 16px;
-    padding-bottom: 25px;
+    padding-bottom: 20px;
     padding-left: 20px;
   }
 
   .advantages__item::before {
     top: 26px;
     left: 20px;
-    width: 36px;
     height: 26px;
+  }
+
+  .advantages__item--zodiac-boat h3 {
+    margin-bottom: 20px;
+  }
+
+  .advantages__item--liner::before {
+    width: 21px;
+    background: url("../img/svg/liner-tablet.svg") no-repeat;
+  }
+
+  .advantages__item--all-inclusive::before {
+    width: 27px;
+    background: url("../img/svg/all-inclusive-tablet.svg") no-repeat;
+  }
+
+  .advantages__item--zodiac-boat::before {
+    width: 36px;
+    background: url("../img/svg/zodiac-boat-tablet.svg") no-repeat;
   }
 
   .advantages__item h3 {
     line-height: 25px;
   }
 
+  .advantages__item--all-inclusive br {
+    display: block;
+  }
+
   .cruises {
-    padding-top: 100px;
-    padding-bottom: 100px;
+    padding: 100px 60px;
   }
 
   .cruises h2 {
     font-size: 26px;
-    line-height: 39px;
+    line-height: 18px;
+    margin-bottom: 62px;
   }
 
   .cruises__list {
@@ -1666,41 +1787,57 @@ button,
   }
 
   .cruises__img-wrapper p {
-    bottom: 35px;
+    bottom: 28px;
     left: 35px;
   }
 
+  .cruises__img {
+    width: 309px;
+  }
+
   .cruises__content {
-    padding: 35px;
+    padding-top: 28px;
+    padding-bottom: 35px;
+    padding-left: 35px;
+    padding-right: 35px;
   }
 
   .booking {
     background-image: url("../img/background/booking-tablet.png");
   }
 
-  .booking .container {
+  .booking__container {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column;
     padding-top: 100px;
     padding-bottom: 100px;
-  }
-
-  .booking h2 {
-    font-size: 34px;
-    line-height: 51px;
-    margin-bottom: 25px;
-  }
-
-  .booking p {
-    text-align: center;
+    padding-left: 45px;
+    padding-right: 45px;
   }
 
   .booking__content {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
     max-width: 100%;
     margin-right: 0;
-    margin-bottom: 60px;
+    margin-bottom: 53px;
+  }
+
+  .booking__content h2 {
+    font-size: 34px;
+    line-height: 25px;
+    margin-bottom: 18px;
+  }
+
+  .booking__content p {
+    text-align: center;
+  }
+
+  .booking__form p {
+    margin-bottom: 27px;
   }
 
   .contacts {
@@ -1709,20 +1846,27 @@ button,
     -ms-grid-columns: (1fr)[2];
     grid-template-columns: repeat(2, 1fr);
     gap: 30px;
+    padding-right: 45px;
+    padding-left: 45px;
     padding-top: 100px;
     padding-bottom: 100px;
   }
 
   .contacts__content {
     margin-left: 0;
+    margin-top: 65px;
   }
 
   .contacts__content p {
-    margin-bottom: 30px;
+    margin-bottom: 27px;
   }
 
-  .contacts__content p::before {
-    top: 7px;
+  .contacts__item {
+    margin-bottom: 21px;
+  }
+
+  .contacts__item br {
+    display: block;
   }
 
   .map [data-map-yandex] {
@@ -1737,6 +1881,17 @@ button,
 
   .footer {
     min-height: 120px;
+  }
+
+  .footer__container {
+    padding-left: 45px;
+    padding-right: 45px;
+    padding-top: 47px;
+    padding-bottom: 42px;
+  }
+
+  .footer__logo {
+    margin-right: 25px;
   }
 
   .footer__icon {
@@ -1761,6 +1916,10 @@ button,
     width: 16px;
     height: 16px;
   }
+
+  .social__icon--ok {
+    width: 10px;
+  }
 }
 
 @media (-webkit-min-device-pixel-ratio: 1.5) and (max-width: 1023px), (-o-min-device-pixel-ratio: 3/2) and (max-width: 1023px), (min-resolution: 144dpi) and (max-width: 1023px), (min-resolution: 1.5dppx) and (max-width: 1023px) {
@@ -1774,10 +1933,6 @@ button,
 }
 
 @media (max-width: 767px) {
-  .container {
-    padding: 0 15px;
-  }
-
   .modal__wrapper {
     padding: 60px 16px;
   }
@@ -1789,6 +1944,10 @@ button,
 
   .modal--fit-content .modal__content {
     width: 100%;
+  }
+
+  .header {
+    top: 20px;
   }
 
   .header__wrapper {
@@ -1880,23 +2039,35 @@ button,
     background-image: url("../img/background/background-mobile.png");
   }
 
+  .intro__container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
   .intro h1 {
     font-size: 36px;
     line-height: 45px;
-    margin-bottom: 25px;
+    margin-bottom: 12px;
+    margin-top: -7px;
   }
 
   .intro p {
     font-size: 16px;
   }
 
-  [data-intro].closed h1,
-  [data-intro].closed p {
-    display: none;
+  .intro br {
+    display: block;
+  }
+
+  [data-intro].is-closed h1,
+  [data-intro].is-closed p {
+    opacity: 0;
   }
 
   .promo {
-    padding-top: 65px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 55px;
     padding-bottom: 85px;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -1904,15 +2075,15 @@ button,
     flex-direction: column;
   }
 
-  .promo h2 {
-    font-size: 24px;
-    line-height: 34px;
-  }
-
   .promo__content {
     margin-right: 0;
     max-width: 100%;
-    margin-bottom: 50px;
+    margin-bottom: 34px;
+  }
+
+  .promo h2 {
+    font-size: 24px;
+    line-height: 34px;
   }
 
   .promo__img {
@@ -1920,13 +2091,16 @@ button,
     height: 156px;
   }
 
-  .advantages {
-    padding: 65px 0;
+  .advantages__container {
+    padding-top: 65px;
+    padding-bottom: 65px;
+    padding-left: 15px;
+    padding-right: 15px;
   }
 
   .advantages h2 {
     font-size: 24px;
-    line-height: 36px;
+    line-height: 18px;
     margin-bottom: 40px;
   }
 
@@ -1935,13 +2109,24 @@ button,
     grid-template-columns: 1fr;
   }
 
+  .advantages__item::before {
+    top: 24px;
+  }
+
+  .advantages__item h3 {
+    margin-bottom: 10px;
+  }
+
+  .advantages__item br {
+    display: block;
+  }
+
   .cruises {
-    padding: 65px 0;
+    padding: 65px 25px;
   }
 
   .cruises h2 {
     font-size: 24px;
-    line-height: 36px;
     margin-bottom: 40px;
   }
 
@@ -1950,38 +2135,84 @@ button,
     grid-template-columns: 1fr;
   }
 
+  .cruises__img-wrapper p {
+    bottom: 17px;
+    left: 26px;
+  }
+
+  .cruises__img {
+    width: 270px;
+  }
+
+  .cruises__content {
+    padding-top: 28px;
+    padding-bottom: 33px;
+    padding-left: 26px;
+    padding-right: 24px;
+  }
+
   .booking {
     background-image: url("../img/background/booking-mobile.png");
   }
 
-  .booking .container {
-    padding: 65px 15px;
+  .booking__container {
+    padding-top: 60px;
+    padding-bottom: 65px;
+    padding-left: 15px;
+    padding-right: 15px;
   }
 
-  .booking h2 {
+  .booking__content {
+    margin-bottom: 34px;
+  }
+
+  .booking__content h2 {
+    font-size: 24px;
+    line-height: 29px;
     text-align: center;
+    margin-bottom: 17px;
   }
 
-  .booking p {
+  .booking__content p {
     font-size: 16px;
     line-height: 22px;
   }
 
-  .booking__content {
-    margin-bottom: 40px;
+  .booking__content br {
+    display: block;
   }
 
   .booking__form {
-    padding: 40px 30px;
+    padding-top: 34px;
+    padding-bottom: 40px;
+    padding-left: 30px;
+    padding-right: 30px;
   }
 
   .booking__form p {
+    text-align: center;
     font-size: 18px;
     line-height: 25px;
+    margin-bottom: 29px;
   }
 
   .booking__form input[type=checkbox] {
     width: 230px;
+    bottom: 95px;
+  }
+
+  .booking__form input[type=checkbox] + label {
+    margin-bottom: 25px;
+    margin-top: -1px;
+    padding-left: 28px;
+    width: 180px;
+  }
+
+  .booking__form input[type=checkbox] + label::before {
+    width: 20px;
+    height: 20px;
+    left: 0;
+    top: 1px;
   }
 
   .contacts {
@@ -1992,8 +2223,15 @@ button,
     -webkit-box-direction: reverse;
     -ms-flex-direction: column-reverse;
     flex-direction: column-reverse;
-    padding-top: 65px;
+    padding-right: 15px;
+    padding-left: 15px;
+    padding-top: 57px;
     padding-bottom: 65px;
+  }
+
+  .contacts__content {
+    margin-top: 0;
+    margin-bottom: -14px;
   }
 
   .map [data-map-yandex] {
@@ -2006,7 +2244,9 @@ button,
     height: 316px;
   }
 
-  .footer .container {
+  .footer__container {
+    padding-left: 15px;
+    padding-right: 15px;
     padding-top: 40px;
     padding-bottom: 40px;
     -webkit-box-orient: vertical;
@@ -2019,7 +2259,7 @@ button,
   }
 
   .footer__logo {
-    margin-bottom: 30px;
+    margin-bottom: 15px;
   }
 
   .footer__icon {
@@ -2032,11 +2272,11 @@ button,
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column;
-    margin-bottom: 30px;
+    margin-bottom: 24px;
   }
 
   .footer__item:not(:last-child) {
-    margin-bottom: 17px;
+    margin-bottom: 8px;
   }
 
   .footer__link {
@@ -2084,21 +2324,21 @@ button,
   }
 
   .booking__form input:hover:not(.focus-visible) {
-    outline: 2px solid #f9fbfd;
+    outline: 1px solid #f9fbfd;
     outline-offset: 1px;
   }
 
   .booking__form input[type=checkbox]:hover:not(.focus-visible) + label::before {
-    outline: 2px solid #f9fbfd;
+    outline: 1px solid #f9fbfd;
     outline-offset: 1px;
   }
 
   .booking__button:hover:not(.focus-visible) {
-    outline: 2px solid #f9fbfd;
+    outline: 1px solid #f9fbfd;
     outline-offset: 2px;
   }
 
-  .contacts__content a[href^="tel:"]:hover:not(.focus-visible) {
+  .contacts__content a:hover:not(.focus-visible) {
     -webkit-text-decoration: underline #011c40;
     text-decoration: underline #011c40;
     outline: none;

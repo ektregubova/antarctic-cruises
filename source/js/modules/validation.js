@@ -5,15 +5,17 @@ const validFormArray = [];
 
 formArray.forEach((elem) => {
   if (elem.hasAttribute('data-reg')) {
-    elem.setAttribute('is-valid', '0');
+    elem.setAttribute('is-valid', '');
     validFormArray.push(elem);
   }
 });
 
-function inputHandler({target}) {
-  if (target.hasAttribute('data-reg')) {
-    inputCheck(target);
-  }
+function checkEmptyInputs() {
+  formArray.forEach(function (input) {
+    if (input.value === '') {
+      input.setAttribute('is-valid', '0');
+    }
+  });
 }
 
 function inputCheck(elem) {
@@ -22,14 +24,19 @@ function inputCheck(elem) {
   const reg = new RegExp(inputReg);
   if (reg.test(inputValue)) {
     elem.setAttribute('is-valid', '1');
-    elem.style.border = 'none';
   } else {
     elem.setAttribute('is-valid', '0');
-    elem.style.border = '3px solid #ff1553';
   }
 }
 
-function buttonHandler(e) {
+function inputHandler({target}) {
+  if (target.hasAttribute('data-reg')) {
+    inputCheck(target);
+  }
+}
+
+function buttonHandler(evt) {
+  checkEmptyInputs();
   const allValid = [];
   validFormArray.forEach((elem) => {
     allValid.push(elem.getAttribute('is-valid'));
@@ -39,7 +46,7 @@ function buttonHandler(e) {
   });
 
   if (!isAllValid) {
-    e.preventDefault();
+    evt.preventDefault();
   }
 }
 
