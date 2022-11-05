@@ -162,6 +162,8 @@
   padding: 11px 16px;
   border: none;
   background-color: $color-light;
+  font-size: 14px;
+  line-height: 21px;
 
   &::placeholder {
     font-size: 14px;
@@ -187,7 +189,7 @@
 
   @include vp-767 {
     width: 230px;
-    bottom: 95px;
+    bottom: 105px;
   }
 
   @include hover {
