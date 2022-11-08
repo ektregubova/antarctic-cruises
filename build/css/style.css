@@ -1443,7 +1443,6 @@ button,
 
 .contacts__item--address::before {
   height: 22px;
-  top: 6px;
   background-image: url("../img/svg/map-icon.svg");
 }
 
@@ -1871,6 +1870,10 @@ button,
 
   .contacts__item {
     margin-bottom: 21px;
+  }
+
+  .contacts__item--address::before {
+    top: 6px;
   }
 
   .contacts__item br {
