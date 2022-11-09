@@ -1,7 +1,5 @@
 .contacts {
-  width: 100%;
-  max-width: 1260px;
-  margin: 0 auto;
+  @include container;
   display: flex;
   justify-content: space-between;
   padding: 120px 50px;

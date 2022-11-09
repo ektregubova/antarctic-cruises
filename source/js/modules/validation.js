@@ -1,16 +1,27 @@
 const bookingForm = document.querySelector('[data-form]');
-const formArray = Array.from(bookingForm);
 const formButton = document.querySelector('[data-form-button]');
 const validFormArray = [];
 
-formArray.forEach((elem) => {
-  if (elem.hasAttribute('data-reg')) {
-    elem.setAttribute('is-valid', '');
-    validFormArray.push(elem);
-  }
-});
+let formArray;
+
+if (bookingForm) {
+  formArray = Array.from(bookingForm);
+}
+
+if (formArray) {
+  formArray.forEach((elem) => {
+    if (elem.hasAttribute('data-reg')) {
+      elem.setAttribute('is-valid', '');
+      validFormArray.push(elem);
+    }
+  });
+}
 
 function checkEmptyInputs() {
+  if (!formArray) {
+    return;
+  }
+
   formArray.forEach(function (input) {
     if (input.value === '') {
       input.setAttribute('is-valid', '0');
@@ -51,6 +62,10 @@ function buttonHandler(evt) {
 }
 
 function validateForm() {
+  if (!bookingForm || !formButton) {
+    return;
+  }
+
   bookingForm.addEventListener('input', inputHandler);
   formButton.addEventListener('click', buttonHandler);
 }

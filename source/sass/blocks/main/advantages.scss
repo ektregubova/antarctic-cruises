@@ -1,20 +1,18 @@
 .advantages {
-  background-image: image-set(url("../img/background-advantages.webp") 1x,
-                              url("../img/background-advantages.png") 1x);
+  background-image: image-set(url("../img/content/background-advantages.webp") 1x,
+                              url("../img/content/background-advantages.png") 1x);
   background-repeat: no-repeat;
   background-size: cover;
   background-color: #d9e6f5;
 
   @include retina {
-    background-image: image-set(url("../img/background-advantages@2x.webp") 2x,
-                                url("../img/background-advantages@2x.png") 2x);
+    background-image: image-set(url("../img/content/background-advantages@2x.webp") 2x,
+                                url("../img/content/background-advantages@2x.png") 2x);
   }
 }
 
 .advantages__container {
-  width: 100%;
-  max-width: 1260px;
-  margin: 0 auto;
+  @include container;
   padding: 120px 50px;
   display: flex;
   flex-direction: column;

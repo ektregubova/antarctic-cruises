@@ -1,42 +1,40 @@
 .booking {
   min-height: 555px;
 
-  background-image: image-set(url("../img/booking-background.webp") 1x,
-                              url("../img/booking-background.png") 1x);
+  background-image: image-set(url("../img/content/booking-background.webp") 1x,
+                              url("../img/content/booking-background.png") 1x);
   background-repeat: no-repeat;
   background-size: cover;
   background-color: #b6d9fa;
 
   @include vp-1023 {
-    background-image: image-set(url("../img/booking-tablet.webp") 1x,
-                                url("../img/booking-tablet.png") 1x);
+    background-image: image-set(url("../img/content/booking-tablet.webp") 1x,
+                                url("../img/content/booking-tablet.png") 1x);
   }
 
   @include vp-767 {
-    background-image: image-set(url("../img/booking-mobile.webp") 1x,
-                                url("../img/booking-mobile.png") 1x);
+    background-image: image-set(url("../img/content/booking-mobile.webp") 1x,
+                                url("../img/content/booking-mobile.png") 1x);
   }
 
   @include retina {
-    background-image: image-set(url("../img/booking-background@2x.webp") 2x,
-                                url("../img/booking-background@2x.png") 2x);
+    background-image: image-set(url("../img/content/booking-background@2x.webp") 2x,
+                                url("../img/content/booking-background@2x.png") 2x);
 
     @include vp-1023 {
-      background-image: image-set(url("../img/booking-tablet@2x.webp") 2x,
-                                  url("../img/booking-tablet@2x.png") 2x);
+      background-image: image-set(url("../img/content/booking-tablet@2x.webp") 2x,
+                                  url("../img/content/booking-tablet@2x.png") 2x);
     }
 
     @include vp-767 {
-      background-image: image-set(url("../img/booking-mobile@2x.webp") 2x,
-                                  url("../img/booking-mobile@2x.png") 2x);
+      background-image: image-set(url("../img/content/booking-mobile@2x.webp") 2x,
+                                  url("../img/content/booking-mobile@2x.png") 2x);
     }
   }
 }
 
 .booking__container {
-  width: 100%;
-  max-width: 1260px;
-  margin: 0 auto;
+  @include container;
   display: flex;
   align-items: center;
   justify-content: space-between;

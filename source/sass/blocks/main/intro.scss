@@ -5,8 +5,8 @@
   justify-content: center;
   color: $color-light;
   text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-  background-image: image-set(url("../img/background-desktop.webp") 1x,
-                              url("../img/background-desktop.png") 1x);
+  background-image: image-set(url("../img/content/background-desktop.webp") 1x,
+                              url("../img/content/background-desktop.png") 1x);
   background-repeat: no-repeat;
   background-size: cover;
   background-color: #266aab;
@@ -14,37 +14,35 @@
 
   @include vp-1023 {
     min-height: 638px;
-    background-image: image-set(url("../img/background-tablet.webp") 1x,
-                                url("../img/background-tablet.png") 1x);
+    background-image: image-set(url("../img/content/background-tablet.webp") 1x,
+                                url("../img/content/background-tablet.png") 1x);
     filter: none;
   }
 
   @include vp-767 {
     min-height: 500px;
-    background-image: image-set(url("../img/background-mobile.webp") 1x,
-                                url("../img/background-mobile.png") 1x);
+    background-image: image-set(url("../img/content/background-mobile.webp") 1x,
+                                url("../img/content/background-mobile.png") 1x);
   }
 
   @include retina {
-    background-image: image-set(url("../img/background-desktop@2x.webp") 2x,
-                                url("../img/background-desktop@2x.png") 2x);
+    background-image: image-set(url("../img/content/background-desktop@2x.webp") 2x,
+                                url("../img/content/background-desktop@2x.png") 2x);
 
     @include vp-1023 {
-      background-image: image-set(url("../img/background-tablet@2x.webp") 2x,
-                                  url("../img/background-tablet@2x.png") 2x);
+      background-image: image-set(url("../img/content/background-tablet@2x.webp") 2x,
+                                  url("../img/content/background-tablet@2x.png") 2x);
     }
 
     @include vp-767 {
-      background-image: image-set(url("../img/background-mobile@2x.webp") 2x,
-                                  url("../img/background-mobile@2x.png") 2x);
+      background-image: image-set(url("../img/content/background-mobile@2x.webp") 2x,
+                                  url("../img/content/background-mobile@2x.png") 2x);
     }
   }
 }
 
 .intro__container {
-  width: 100%;
-  max-width: 1260px;
-  margin: 0 auto;
+  @include container;
   padding: 0 145px;
 
   @include vp-1023 {

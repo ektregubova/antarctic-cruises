@@ -18,12 +18,10 @@
 }
 
 .header__wrapper {
+  @include container;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
-  max-width: 1260px;
-  margin: 0 auto;
   padding: 0 50px;
 
   @include vp-1023 {
@@ -61,7 +59,7 @@
 
 .header__item:not(:last-child) {
   margin-right: 33px;
-  // change
+
   @include vp-1023 {
     margin-right: 23px;
   }
@@ -209,7 +207,7 @@
   }
 }
 
-[data-header].no-nojs [data-nav-toggle] {
+[data-header].no-js [data-nav-toggle] {
   @include vp-767 {
     display: none;
   }

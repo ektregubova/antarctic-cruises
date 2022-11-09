@@ -1,7 +1,5 @@
 .cruises {
-  width: 100%;
-  max-width: 1260px;
-  margin: 0 auto;
+  @include container;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -77,6 +75,7 @@
   transition: opacity $trans-default;
 }
 
+.cruises__item h3,
 .cruises__item p {
   font-weight: 500;
   font-size: 18px;
@@ -84,7 +83,7 @@
   margin: 0;
 }
 
-.cruises__img-wrapper p {
+.cruises__item h3 {
   position: absolute;
   bottom: 22px;
   left: 30px;
@@ -100,7 +99,7 @@
   }
 }
 
-.cruises__img {
+.cruises__item img {
   min-height: 386px;
   object-fit: cover;
 
@@ -145,19 +144,17 @@
   }
 }
 
-.cruises__content dl {
+.cruises__item dl {
   margin: 0;
   font-size: 14px;
   line-height: 20px;
-  //margin-bottom: 20px;
 }
 
-.cruises__content dt {
+.cruises__item dt {
   font-weight: 500;
-  //margin-bottom: 5px;
 }
 
-.cruises__content dd {
+.cruises__item dd {
   margin: 0;
   font-weight: 400;
   color: $color-light-opacity;

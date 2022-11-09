@@ -3073,8 +3073,7 @@ const swiper = () => {
       data.isTouchEvent = e.type === 'touchstart';
       if (!data.isTouchEvent && 'which' in e && e.which === 3) return;
       if (!data.isTouchEvent && 'button' in e && e.button > 0) return;
-      if (data.isTouched && data.isMoved) return; 
-
+      if (data.isTouched && data.isMoved) return;
       const swipingClassHasValue = !!params.noSwipingClass && params.noSwipingClass !== '';
 
       if (swipingClassHasValue && e.target && e.target.shadowRoot && event.path && event.path[0]) {

@@ -2,6 +2,10 @@ let mapImage = document.querySelector('[data-map-nojs]');
 let mapYandex = document.querySelector('[data-map-yandex]');
 
 function addMap() {
+  if (!mapImage || !mapYandex) {
+    return;
+  }
+
   mapImage.classList.add('nojs');
   mapYandex.classList.add('js');
 }

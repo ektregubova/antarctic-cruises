@@ -8,9 +8,7 @@
 }
 
 .footer__container {
-  width: 100%;
-  max-width: 1260px;
-  margin: 0 auto;
+  @include container;
   display: flex;
   justify-content: flex-start;
   align-items: center;

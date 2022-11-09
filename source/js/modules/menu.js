@@ -1,11 +1,17 @@
 let header = document.querySelector('[data-header]');
-let toggleNav = header.querySelector('[data-nav-toggle]');
+let toggleNav = document.querySelector('[data-nav-toggle]');
 let intro = document.querySelector('[data-intro]');
 
-header.classList.remove('no-js');
-header.classList.add('is-closed');
+if (header) {
+  header.classList.remove('no-js');
+  header.classList.add('is-closed');
+}
 
 function clickOnToggle() {
+  if (!toggleNav) {
+    return;
+  }
+
   toggleNav.addEventListener('click', function () {
     if (header.classList.contains('is-closed')) {
       header.classList.remove('is-closed');
