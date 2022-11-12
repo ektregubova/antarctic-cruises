@@ -859,6 +859,11 @@ button,
   transform: rotate(-45deg);
 }
 
+[data-header].is-opened .header__nav,
+[data-header].no-js .header__nav {
+  overflow: auto;
+}
+
 .intro {
   min-height: 650px;
   display: -webkit-box;
@@ -979,6 +984,7 @@ button,
   line-height: 20px;
   margin: 0;
   margin-bottom: 60px;
+  text-align: center;
 }
 
 .advantages__list {
@@ -1072,6 +1078,7 @@ button,
   line-height: 20px;
   margin: 0;
   margin-bottom: 60px;
+  text-align: center;
 }
 
 .cruises__list {
@@ -1143,7 +1150,7 @@ button,
   left: 0;
   opacity: 0;
   width: 100%;
-  min-height: 386px;
+  height: 100%;
   background-color: #011c40;
   padding-top: 30px;
   padding-bottom: 34px;
@@ -1152,6 +1159,7 @@ button,
   -webkit-transition: opacity 0.3s ease;
   -o-transition: opacity 0.3s ease;
   transition: opacity 0.3s ease;
+  overflow: auto;
 }
 
 .cruises__item dl {
@@ -1988,13 +1996,13 @@ button,
 
   [data-header].is-opened {
     top: 0;
-    min-height: 568px;
+    height: 568px;
     background-color: rgba(0, 43, 102, 0.5);
   }
 
   [data-header].no-js {
     position: static;
-    min-height: 568px;
+    height: 568px;
     background-color: rgba(0, 43, 102, 0.5);
   }
 

@@ -1,5 +1,5 @@
-let mapImage = document.querySelector('[data-map-nojs]');
-let mapYandex = document.querySelector('[data-map-yandex]');
+const mapImage = document.querySelector('[data-map-nojs]');
+const mapYandex = document.querySelector('[data-map-yandex]');
 
 function addMap() {
   if (!mapImage || !mapYandex) {

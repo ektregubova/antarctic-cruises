@@ -23,6 +23,7 @@
   line-height: 20px;
   margin: 0;
   margin-bottom: 60px;
+  text-align: center;
 
   @include vp-1023 {
     font-size: 26px;
@@ -121,13 +122,14 @@
   left: 0;
   opacity: 0;
   width: 100%;
-  min-height: 386px;
+  height: 100%;
   background-color: $color-dark;
   padding-top: 30px;
   padding-bottom: 34px;
   padding-left: 25px;
   padding-right: 25px;
   transition: opacity $trans-default;
+  overflow: auto;
 
   @include vp-1023 {
     padding-top: 28px;
