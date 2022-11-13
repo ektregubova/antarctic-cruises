@@ -1086,6 +1086,7 @@ button,
   display: grid;
   -ms-grid-columns: (1fr)[4];
   grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 386px;
   gap: 30px;
   list-style: none;
   margin: 0;
@@ -1096,7 +1097,6 @@ button,
 .cruises__item {
   position: relative;
   cursor: pointer;
-  min-height: 386px;
 }
 
 .cruises__item.focus-visible:focus .cruises__content {
@@ -1183,7 +1183,7 @@ button,
   min-height: 40px;
   font-weight: 600;
   font-size: 14px;
-  line-height: 21px;
+  line-height: 20px;
 }
 
 .cruises__link.focus-visible:focus {
