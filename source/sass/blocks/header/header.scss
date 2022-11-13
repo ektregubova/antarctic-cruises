@@ -94,6 +94,12 @@
     cursor: pointer;
     border: none;
     background-color: transparent;
+    padding: 0;
+
+    @include hover-focus {
+      outline: 1px solid $color-dark;
+      outline-offset: 2px;
+    }
   }
 }
 
@@ -106,6 +112,7 @@
   width: 24px;
   background-color: $color-light;
   box-shadow: 0 6px 0 0 $color-light, 0 12px 0 0 $color-light;
+  z-index: 1;
 }
 
 [data-header].is-closed .header__list {
@@ -118,6 +125,8 @@
   position: absolute;
   top: 25px;
   right: 13px;
+  width: 16px;
+  z-index: 1;
 
   &::before,
   &::after {
@@ -209,6 +218,15 @@
     font-weight: 500;
     font-size: 18px;
     line-height: 22px;
+
+    @include hover-focus {
+      text-decoration: underline $color-dark;
+      outline: none;
+    }
+
+    @include active {
+      outline: 2px solid $color-dark;
+    }
   }
 }
 

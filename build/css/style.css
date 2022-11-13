@@ -828,12 +828,15 @@ button,
   background-color: #f9fbfd;
   -webkit-box-shadow: 0 6px 0 0 #f9fbfd, 0 12px 0 0 #f9fbfd;
   box-shadow: 0 6px 0 0 #f9fbfd, 0 12px 0 0 #f9fbfd;
+  z-index: 1;
 }
 
 [data-header].is-opened [data-nav-toggle] {
   position: absolute;
   top: 25px;
   right: 13px;
+  width: 16px;
+  z-index: 1;
 }
 
 [data-header].is-opened [data-nav-toggle]::before,
@@ -1655,6 +1658,13 @@ button,
   }
 */
 
+@media (-webkit-min-device-pixel-ratio: 1.5) and (min-width: 1024px), (-o-min-device-pixel-ratio: 3/2) and (min-width: 1024px), (min-resolution: 144dpi) and (min-width: 1024px), (min-resolution: 1.5dppx) and (min-width: 1024px) {
+  .intro {
+    background-image: -webkit-image-set(url("../img/content/background-desktop@2x.webp") 2x, url("../img/content/background-desktop@2x.png") 2x);
+    background-image: image-set(url("../img/content/background-desktop@2x.webp") 2x, url("../img/content/background-desktop@2x.png") 2x);
+  }
+}
+
 @media (max-width: 1023px) {
   .header {
     top: 27px;
@@ -1941,12 +1951,14 @@ button,
   }
 }
 
-@media (-webkit-min-device-pixel-ratio: 1.5) and (max-width: 1023px), (-o-min-device-pixel-ratio: 3/2) and (max-width: 1023px), (min-resolution: 144dpi) and (max-width: 1023px), (min-resolution: 1.5dppx) and (max-width: 1023px) {
+@media (max-width: 1023px) and (-webkit-min-device-pixel-ratio: 1.5), (max-width: 1023px) and (-o-min-device-pixel-ratio: 3/2), (max-width: 1023px) and (min-resolution: 144dpi), (max-width: 1023px) and (min-resolution: 1.5dppx) {
   .intro {
     background-image: -webkit-image-set(url("../img/content/background-tablet@2x.webp") 2x, url("../img/content/background-tablet@2x.png") 2x);
     background-image: image-set(url("../img/content/background-tablet@2x.webp") 2x, url("../img/content/background-tablet@2x.png") 2x);
   }
+}
 
+@media (-webkit-min-device-pixel-ratio: 1.5) and (max-width: 1023px), (-o-min-device-pixel-ratio: 3/2) and (max-width: 1023px), (min-resolution: 144dpi) and (max-width: 1023px), (min-resolution: 1.5dppx) and (max-width: 1023px) {
   .booking {
     background-image: -webkit-image-set(url("../img/content/booking-tablet@2x.webp") 2x, url("../img/content/booking-tablet@2x.png") 2x);
     background-image: image-set(url("../img/content/booking-tablet@2x.webp") 2x, url("../img/content/booking-tablet@2x.png") 2x);
@@ -1987,6 +1999,12 @@ button,
     cursor: pointer;
     border: none;
     background-color: transparent;
+    padding: 0;
+  }
+
+  .header__toggle.focus-visible:focus {
+    outline: 1px solid #011c40;
+    outline-offset: 2px;
   }
 
   [data-header].is-closed .header__list {
@@ -2053,6 +2071,18 @@ button,
     font-weight: 500;
     font-size: 18px;
     line-height: 22px;
+  }
+
+  [data-header].is-opened .header__link.focus-visible:focus,
+  [data-header].no-js .header__link.focus-visible:focus {
+    -webkit-text-decoration: underline #011c40;
+    text-decoration: underline #011c40;
+    outline: none;
+  }
+
+  [data-header].is-opened .header__link.focus-visible:active,
+  [data-header].no-js .header__link.focus-visible:active {
+    outline: 2px solid #011c40;
   }
 
   [data-header].no-js [data-nav-toggle] {
@@ -2316,12 +2346,28 @@ button,
   }
 }
 
-@media (-webkit-min-device-pixel-ratio: 1.5) and (max-width: 767px), (-o-min-device-pixel-ratio: 3/2) and (max-width: 767px), (min-resolution: 144dpi) and (max-width: 767px), (min-resolution: 1.5dppx) and (max-width: 767px) {
+@media (max-width: 767px) and (hover: hover) {
+  .header__toggle:hover:not(.focus-visible) {
+    outline: 1px solid #011c40;
+    outline-offset: 2px;
+  }
+
+  [data-header].is-opened .header__link:hover:not(.focus-visible),
+  [data-header].no-js .header__link:hover:not(.focus-visible) {
+    -webkit-text-decoration: underline #011c40;
+    text-decoration: underline #011c40;
+    outline: none;
+  }
+}
+
+@media (max-width: 767px) and (-webkit-min-device-pixel-ratio: 1.5), (max-width: 767px) and (-o-min-device-pixel-ratio: 3/2), (max-width: 767px) and (min-resolution: 144dpi), (max-width: 767px) and (min-resolution: 1.5dppx) {
   .intro {
     background-image: -webkit-image-set(url("../img/content/background-mobile@2x.webp") 2x, url("../img/content/background-mobile@2x.png") 2x);
     background-image: image-set(url("../img/content/background-mobile@2x.webp") 2x, url("../img/content/background-mobile@2x.png") 2x);
   }
+}
 
+@media (-webkit-min-device-pixel-ratio: 1.5) and (max-width: 767px), (-o-min-device-pixel-ratio: 3/2) and (max-width: 767px), (min-resolution: 144dpi) and (max-width: 767px), (min-resolution: 1.5dppx) and (max-width: 767px) {
   .booking {
     background-image: -webkit-image-set(url("../img/content/booking-mobile@2x.webp") 2x, url("../img/content/booking-mobile@2x.png") 2x);
     background-image: image-set(url("../img/content/booking-mobile@2x.webp") 2x, url("../img/content/booking-mobile@2x.png") 2x);
@@ -2386,11 +2432,6 @@ button,
 }
 
 @media (-webkit-min-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
-  .intro {
-    background-image: -webkit-image-set(url("../img/content/background-desktop@2x.webp") 2x, url("../img/content/background-desktop@2x.png") 2x);
-    background-image: image-set(url("../img/content/background-desktop@2x.webp") 2x, url("../img/content/background-desktop@2x.png") 2x);
-  }
-
   .advantages {
     background-image: -webkit-image-set(url("../img/content/background-advantages@2x.webp") 2x, url("../img/content/background-advantages@2x.png") 2x);
     background-image: image-set(url("../img/content/background-advantages@2x.webp") 2x, url("../img/content/background-advantages@2x.png") 2x);

@@ -12,29 +12,31 @@
   background-color: #266aab;
   filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
 
+  @include retina {
+    @media (min-width: ($vp-1024)) {
+      background-image: image-set(url("../img/content/background-desktop@2x.webp") 2x,
+                                  url("../img/content/background-desktop@2x.png") 2x);
+    }
+  }
+
   @include vp-1023 {
     min-height: 638px;
     background-image: image-set(url("../img/content/background-tablet.webp") 1x,
                                 url("../img/content/background-tablet.png") 1x);
     filter: none;
+
+    @include retina {
+      background-image: image-set(url("../img/content/background-tablet@2x.webp") 2x,
+                                  url("../img/content/background-tablet@2x.png") 2x);
+    }
   }
 
   @include vp-767 {
     min-height: 500px;
     background-image: image-set(url("../img/content/background-mobile.webp") 1x,
                                 url("../img/content/background-mobile.png") 1x);
-  }
 
-  @include retina {
-    background-image: image-set(url("../img/content/background-desktop@2x.webp") 2x,
-                                url("../img/content/background-desktop@2x.png") 2x);
-
-    @include vp-1023 {
-      background-image: image-set(url("../img/content/background-tablet@2x.webp") 2x,
-                                  url("../img/content/background-tablet@2x.png") 2x);
-    }
-
-    @include vp-767 {
+    @include retina {
       background-image: image-set(url("../img/content/background-mobile@2x.webp") 2x,
                                   url("../img/content/background-mobile@2x.png") 2x);
     }
