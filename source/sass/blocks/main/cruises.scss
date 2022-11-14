@@ -69,6 +69,16 @@
       opacity: 0;
     }
   }
+
+  &:focus-within {
+    .cruises__content {
+      opacity: 1;
+    }
+
+    .cruises__img-wrapper {
+      opacity: 0;
+    }
+  }
 }
 
 .cruises__img-wrapper {

@@ -1110,6 +1110,14 @@ button,
   opacity: 0;
 }
 
+.cruises__item:focus-within .cruises__content {
+  opacity: 1;
+}
+
+.cruises__item:focus-within .cruises__img-wrapper {
+  opacity: 0;
+}
+
 .cruises__img-wrapper {
   -webkit-transition: opacity 0.3s ease;
   -o-transition: opacity 0.3s ease;
