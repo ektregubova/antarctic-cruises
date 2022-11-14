@@ -1,35 +1,42 @@
-.map [data-map-yandex] {
-  display: none;
-  width: 560px;
+.map {
+  max-width: 560px;
+  width: 100%;
   height: 306px;
 
   @include vp-1023 {
-    width: 324px;
+    min-width: 324px;
     height: 335px;
   }
 
   @include vp-767 {
-    width: 290px;
+    min-width: 100%;
+    max-width: 100%;
     height: 316px;
   }
+}
+
+.map [data-map-yandex] {
+  display: none;
 
   &.js {
     display: block;
+    width: 100%;
+    height: 100%;
   }
 }
 
 .map [data-map-nojs] {
   object-fit: cover;
-  width: 560px;
+  max-width: 560px;
+  width: 100%;
   height: 306px;
 
   @include vp-1023 {
-    width: 324px;
+    max-width: 100%;
     height: 335px;
   }
 
   @include vp-767 {
-    width: 290px;
     height: 316px;
   }
 

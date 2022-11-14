@@ -584,6 +584,18 @@ button,
   flex-grow: 1;
 }
 
+.wrapper.overlay {
+  overflow-y: hidden;
+}
+
+.wrapper.overlay::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 43, 102, 0.5);
+}
+
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -1492,20 +1504,27 @@ button,
   outline: 2px solid #011c40;
 }
 
+.map {
+  max-width: 560px;
+  width: 100%;
+  height: 306px;
+}
+
 .map [data-map-yandex] {
   display: none;
-  width: 560px;
-  height: 306px;
 }
 
 .map [data-map-yandex].js {
   display: block;
+  width: 100%;
+  height: 100%;
 }
 
 .map [data-map-nojs] {
   -o-object-fit: cover;
   object-fit: cover;
-  width: 560px;
+  max-width: 560px;
+  width: 100%;
   height: 306px;
 }
 
@@ -1874,10 +1893,6 @@ button,
   }
 
   .contacts {
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-columns: (1fr)[2];
-    grid-template-columns: repeat(2, 1fr);
     gap: 30px;
     padding-right: 45px;
     padding-left: 45px;
@@ -1906,13 +1921,13 @@ button,
     display: block;
   }
 
-  .map [data-map-yandex] {
-    width: 324px;
+  .map {
+    min-width: 324px;
     height: 335px;
   }
 
   .map [data-map-nojs] {
-    width: 324px;
+    max-width: 100%;
     height: 335px;
   }
 
@@ -2020,15 +2035,15 @@ button,
   }
 
   [data-header].is-opened {
+    width: 89%;
     top: 0;
-    height: 568px;
-    background-color: rgba(0, 43, 102, 0.5);
+    right: 0;
+    height: 100vh;
   }
 
   [data-header].no-js {
     position: static;
-    height: 568px;
-    background-color: rgba(0, 43, 102, 0.5);
+    min-height: 568px;
   }
 
   [data-header].is-opened .header__wrapper,
@@ -2045,8 +2060,11 @@ button,
     justify-content: flex-start;
     padding-left: 15px;
     padding-top: 20px;
-    background: #f9fbfd;
-    margin-left: 35px;
+    background-color: #f9fbfd;
+  }
+
+  [data-header].no-js .header__wrapper {
+    padding-left: 50px;
   }
 
   [data-header].is-opened .header__logo,
@@ -2281,9 +2299,6 @@ button,
   }
 
   .contacts {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: reverse;
     -ms-flex-direction: column-reverse;
@@ -2299,13 +2314,13 @@ button,
     margin-bottom: -14px;
   }
 
-  .map [data-map-yandex] {
-    width: 290px;
+  .map {
+    min-width: 100%;
+    max-width: 100%;
     height: 316px;
   }
 
   .map [data-map-nojs] {
-    width: 290px;
     height: 316px;
   }
 
